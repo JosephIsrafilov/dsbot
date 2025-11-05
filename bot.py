@@ -11,7 +11,6 @@ import yt_dlp
 from discord.ext import commands
 from dotenv import load_dotenv
 
-
 logging.basicConfig(level=logging.INFO)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -35,11 +34,12 @@ FFMPEG_OPTIONS = {
 ytdl = yt_dlp.YoutubeDL(YTDL_OPTIONS)
 
 
-def format_duration(duration: Optional[int], is_live: bool) -> str:
+def format_duration(duration: Optional[float], is_live: bool) -> str:
     if is_live:
         return "Live"
     if duration is None:
         return "N/A"
+    duration = int(duration)
     minutes, seconds = divmod(duration, 60)
     hours, minutes = divmod(minutes, 60)
     if hours:
