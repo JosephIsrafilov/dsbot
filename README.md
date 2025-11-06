@@ -41,6 +41,13 @@ A lightweight Discord music bot written in Python that joins a voice channel and
    ```bash
    python bot.py
    ```
+## Getting Started
+
+Ensure .env (same folder as bot.py) contains your real token on one line: DISCORD_TOKEN=....
+Invite the bot to your Discord server using the OAuth2 URL with scopes bot (and applications.commands if you want slash commands) plus permissions like Connect, Speak, View Channel, Send Messages.
+In the Developer Portal’s Bot tab verify MESSAGE CONTENT INTENT stays enabled.
+From the project root run python bot.py—the console will show Logged in as … when ready.
+
 
 ## Commands
 
@@ -51,6 +58,8 @@ A lightweight Discord music bot written in Python that joins a voice channel and
 - `!queue` – show the upcoming tracks
 - `!stop` – stop playback and clear the queue
 - `!leave` – disconnect from voice and clear the queue
+
+
 
 ## FAQ
 
